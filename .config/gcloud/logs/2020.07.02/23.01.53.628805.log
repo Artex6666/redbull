@@ -1,0 +1,34 @@
+2020-07-02 23:01:53,632 DEBUG    root            Loaded Command Group: [u'gcloud', u'app']
+2020-07-02 23:01:53,850 DEBUG    root            Loaded Command Group: [u'gcloud', u'app', u'deploy']
+2020-07-02 23:01:53,853 DEBUG    root            Running [gcloud.app.deploy] with arguments: []
+2020-07-02 23:01:53,999 DEBUG    root            Loading runtimes experiment config from [gs://runtime-builders/experiments.yaml]
+2020-07-02 23:01:54,046 INFO     root            Reading [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7fb1410f2050>]
+2020-07-02 23:01:54,320 DEBUG    root            
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 269, in _Read
+    with contextlib.closing(storage_client.ReadObject(object_)) as f:
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/storage_api.py", line 303, in ReadObject
+    object_=object_ref, err=http_exc.HttpException(err)))
+BadFileException: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7fb1410f2050>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-07-02 23:01:54,325 DEBUG    root            Experiment config file could not be read. This error is informational, and does not cause a deployment to fail. Reason: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7fb1410f2050>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/surface/app/deploy.py", line 133, in _ServerSideExperimentEnabled
+    runtimes_builder_root)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/app/runtime_builders.py", line 524, in LoadFromURI
+    .format(uri, e))
+ExperimentsError: Unable to read the runtimes experiment config: [gs://runtime-builders/experiments.yaml], error: Could not read [<googlecloudsdk.api_lib.storage.storage_util.ObjectReference object at 0x7fb1410f2050>]. Please retry: HTTPError 404: No such object: runtime-builders/experiments.yaml
+2020-07-02 23:01:54,383 ERROR    root            An app.yaml (or appengine-web.xml) file is required to deploy this directory as an App Engine application. Create an app.yaml file using the directions at https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml (App Engine Flexible Environment) or https://cloud.google.com/appengine/docs/standard/python/config/appref (App Engine Standard Environment) under the tab for your language.
+2020-07-02 23:01:54,384 DEBUG    root            (gcloud.app.deploy) [/home/sirol1263r] could not be identified as a valid source directory or file.
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 807, in Run
+    resources = command_instance.Run(args)
+  File "/usr/lib/google-cloud-sdk/lib/surface/app/deploy.py", line 117, in Run
+    default_strategy=flex_image_build_option_default))
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deploy_util.py", line 579, in RunDeploy
+    args.deployables, stager, deployables.GetPathMatchers())
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/app/deployables.py", line 406, in GetDeployables
+    raise exceptions.UnknownSourceError(path)
+UnknownSourceError: [/home/sirol1263r] could not be identified as a valid source directory or file.
+2020-07-02 23:01:54,391 ERROR    root            (gcloud.app.deploy) [/home/sirol1263r] could not be identified as a valid source directory or file.

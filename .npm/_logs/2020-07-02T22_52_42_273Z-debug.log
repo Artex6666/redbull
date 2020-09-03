@@ -1,0 +1,36 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/home/sirol1263r/.nvm/versions/node/v14.5.0/bin/node',
+1 verbose cli   '/home/sirol1263r/.nvm/versions/node/v14.5.0/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   'neko.life'
+1 verbose cli ]
+2 info using npm@6.14.5
+3 info using node@v14.5.0
+4 verbose config Skipping project config: /home/sirol1263r/.npmrc. (matches userconfig)
+5 verbose npm-session 99eca539c9aba029
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 http fetch GET 404 https://registry.npmjs.org/neko.life 78ms
+9 http fetch GET 404 https://registry.npmjs.org/neko.life 18ms
+10 silly fetchPackageMetaData error for neko.life@latest 404 Not Found - GET https://registry.npmjs.org/neko.life - Not found
+11 timing stage:rollbackFailedOptional Completed in 0ms
+12 timing stage:runTopLevelLifecycles Completed in 241ms
+13 verbose stack Error: 404 Not Found - GET https://registry.npmjs.org/neko.life - Not found
+13 verbose stack     at /home/sirol1263r/.nvm/versions/node/v14.5.0/lib/node_modules/npm/node_modules/npm-registry-fetch/check-response.js:104:15
+13 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+14 verbose statusCode 404
+15 verbose pkgid neko.life@latest
+16 verbose cwd /home/sirol1263r
+17 verbose Linux 4.19.0-9-cloud-amd64
+18 verbose argv "/home/sirol1263r/.nvm/versions/node/v14.5.0/bin/node" "/home/sirol1263r/.nvm/versions/node/v14.5.0/bin/npm" "i" "neko.life"
+19 verbose node v14.5.0
+20 verbose npm  v6.14.5
+21 error code E404
+22 error 404 Not Found - GET https://registry.npmjs.org/neko.life - Not found
+23 error 404
+24 error 404 'neko.life@latest' is not in the npm registry.
+25 error 404 You should bug the author to publish it (or use the name yourself!)
+26 error 404 Note that you can also install from a
+27 error 404 tarball, folder, http url, or git url.
+28 verbose exit [ 1, true ]
